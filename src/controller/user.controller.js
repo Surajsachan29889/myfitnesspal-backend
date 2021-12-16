@@ -8,4 +8,9 @@ router.get("", async (req, res) => {
   return res.status(200).send({ user });
 });
 
+router.post("", async (req, res) => {
+  const user = await User.create(req.body);
+  return res.status(201).send(user);
+});
+
 module.exports = router;

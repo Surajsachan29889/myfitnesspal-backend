@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { findOneAndRemove } = require("./user.model");
 
 const foodSchema = new mongoose.Schema({
   comment: { type: String },
@@ -16,6 +15,6 @@ const foodSchema = new mongoose.Schema({
   numberOfServings: { type: Number },
 });
 
-const Food = mongoose.model("foods", foodSchema);
+const Food = mongoose.model("foods1", foodSchema);
 
 module.exports = Food;

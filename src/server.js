@@ -5,10 +5,11 @@ const app = express();
 
 //controller import
 const userController = require("./controller/user.controller");
-
+const foodController = require("./controller/food.controller");
 //middlewares
 app.use(express.json());
 app.use("/users", userController);
+app.use("/food", foodController);
 
 let port = process.env.PORT;
 

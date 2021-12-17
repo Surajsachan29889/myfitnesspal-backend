@@ -17,4 +17,10 @@ router.get("/search", (req, res) => {
     });
 });
 
+router.get("/:id", async (req, res) => {
+  let qu = req.params.id;
+  const food = await Food.findById(qu).lean().exec();
+  return res.status(200).send({ food });
+});
+
 module.exports = router;

@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
-const dairySchema = new mongoose.Schema({
-  userid: { type: String, required: true, unique: true },
-  breakfaset: [{ type: String }],
-  lunch: [{ type: String }],
-  dinner: [{ type: String }],
-  snacks: [{ type: String }],
-});
+const dairySchema = new mongoose.Schema(
+  {
+    userId: { type: String, required: true },
+    foodId: { type: String, required: true },
+    cat: { type: String, required: true },
+  },
+  {
+    versionKey: false,
+    timestamps: true,
+  }
+);
 
 const Dairy = mongoose.model("dairys", dairySchema);
 

@@ -8,12 +8,14 @@ const userController = require("./controller/user.controller");
 const foodController = require("./controller/food.controller");
 const dairyController = require("./controller/Dairy.controller");
 const breakfastController = require("./controller/Breakfast.controller");
+const dinnerController = require("./controller/Dinner.controller");
 //middlewares
 app.use(express.json());
 app.use("/users", userController);
 app.use("/food", foodController);
 app.use("/dairy", dairyController);
-app.use("/breakfast", breakfastController);
+app.use("/list", breakfastController);
+app.use("/dinner", dinnerController);
 
 let port = process.env.PORT;
 

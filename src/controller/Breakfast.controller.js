@@ -13,4 +13,12 @@ router.get("", async (req, res) => {
   return res.status(200).send({ user });
 });
 
+router.get("/user", async (req, res) => {
+  const key = req.query.key;
+  const cate = req.query.cat;
+  Breakfast.find({ userId: key, cat: cate }).then((result) => {
+    return res.status(200).send(result);
+  });
+});
+
 module.exports = router;

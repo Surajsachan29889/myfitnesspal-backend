@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const connect = require("./configs/db");
+const cors = require("cors");
 const app = express();
+
 
 //controller import
 const userController = require("./controller/user.controller");
@@ -11,13 +13,14 @@ const breakfastController = require("./controller/Breakfast.controller");
 const dinnerController = require("./controller/Dinner.controller");
 //middlewares
 app.use(express.json());
+app.use(cors());
 app.use("/users", userController);
 app.use("/food", foodController);
 app.use("/dairy", dairyController);
 app.use("/list", breakfastController);
 app.use("/dinner", dinnerController);
 
-let port = process.env.PORT;
+let port = 5000;
 
 const start = async () => {
   await connect();

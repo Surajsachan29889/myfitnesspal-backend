@@ -5,3 +5,4 @@ this is a backend for myfitnesspal project. here we created the APIs for this pr
 ```
 https://salty-hamlet-78204.herokuapp.com/
 ```
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
